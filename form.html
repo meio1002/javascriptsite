@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テンプレート</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <h1 class="iframeTitle">フォーム</h1>
+
+  <div id="contents">
+    <form id="form" method="post">
+      <p>名前：<br>
+      <input id="name" type="text" name="name" maxlength="10" class="required" value="10文字まで"></p>
+      <p>URL：<br>
+      <input type="text" name="url" class="url"></p>
+      <p>Mail：<br>
+      <input type="text" name="email" class="email"></p>
+      <p>パスワード：<br>
+      <input type="text" name="pass" class="pass required"></p>
+      <p>パスワード（確認）：<br>
+      <input type="text" name="pass_re" class="equalTo required"></p>
+      <p><input type="submit" class="submit" value="送信する"></p>
+    </form>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/messages_ja.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

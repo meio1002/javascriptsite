@@ -5,7 +5,7 @@ a {
     text-decoration: none;
 }
 * {
-    font: 500 15px/1em sans-serif;
+    font: 500 1em sans-serif;
 }
 .conteinar {
     max-width: 1200px;
@@ -34,12 +34,16 @@ a {
     color: #fff;
     background: rgb(248, 174, 174);
     position: fixed;
+    top: 0;
     width: 100vw;
-    padding: 10px 0;
+    padding: 1vh 0;
+    /* padding: 10px 0; */
     z-index: 1;
 }
 .header > .conteinar{
-    height: 60px;
+    /* height: 60px; */
+    height: 8vh;
+    /* margin: 1vh 0; */
     display: flex;
     align-items: center;
 }
@@ -49,7 +53,7 @@ a {
     display: block;
 }
 .headerImg .logo img {
-    height: 50px;
+    height: 4em;
     vertical-align: bottom;
 }
 /* ヘッダー検索 */
@@ -64,6 +68,9 @@ a {
     background-color: rgba(0, 0, 0, 0);
     border: none;
 }
+.gsc-search-button-v2 {
+    cursor: pointer;
+}
 /* ヘッダーハンバーガーボタン */
 
 .hamSwitch {
@@ -71,10 +78,10 @@ a {
 	width: 55px;
 	height: 55px;
 	cursor: pointer;
-	/* background-color: rgb(197, 197, 197); */
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 2px;
     box-shadow: 0px 0px 10px;
+    
 }
 .hamSwitch:hover {
     opacity: 0.7;
@@ -85,6 +92,7 @@ a {
 	width: 36px;
 	height: 3px;
 	background-color: #333333;
+    transition: .7s;
 }
 .hamLine1 {
 	top: 13px;
@@ -95,16 +103,30 @@ a {
 .hamLine3 {
 	top: 37px;
 }
+.line_1 {
+    transform: translateY(26px) rotate(-45deg);
+    top: 0;
+}
+.line_2 {
+    opacity: 0;
+}
+.line_3 {
+    transform: translateY(-10px) rotate(45deg);
+    bottom: 0;
+}
 /* ヘッダーレスポンシブ */
 @media ( max-width: 800px ){
     .header {
         padding: 0;
-        padding-top: 10px;
+        padding-top: 1vh;
     }
     .header > .conteinar {
-        height: 110px;
+        height: 13vh;
         padding: 0;
         flex-direction: column;
+    }
+    .headerImg .logo img {
+        height: 3em;
     }
     .hamSwitch {
         position: absolute;
@@ -114,69 +136,198 @@ a {
     .headerSearch { 
         width: 70%;
     }
-
-
+}
+@media ( max-height: 660px ){
+    .header > .conteinar {
+        height: 17vh;
+    }
 }
 
 
 /* ホーム */
 /* ホームメイン  */
 .main {
-    position: relative;
-    /* top: 80px; */
-    /* left: 0; */
+    /* position: relative; */
     background-color: rgb(255, 255, 255);
-    /* width: 100vw; */
     height: 100vh;
-    /* display: flex; */
+    /* top: 80px; */
 }
-/* .content {
-    display: flex;
 
-} */
 @media ( max-width: 800px ) {
     .main {
         top: 120px;
     }
 }
 /* ホーム　メインコンテンツ */
-/* .mainContent {
-    background-color: rgb(133, 25, 13);
-    width: 50vw;
-    height: 88.7vh;
-} */
-/* ホーム　サブコンテンツ */
-/* .subContent {
-    background-color: rgb(40, 151, 88);
-    width: 50vw;
-    height: 88.7vh;
-} */
 .mainContent {
-    width: 100vw;
+    /* width: 99.5vw; */
+    /* height: 99%; */
+    /* height: 88.7vh; */
+    /* height: calc(100vh - 90px); */
+    width: 100%;
+    height: 90vh;
     position: absolute;
-    top: 80px;
-    left: 0;
+    /* top: 80px; */
+    top: 9vh;
+    left: 0; 
 }
+/* ホーム　サブコンテンツ */
 .subContent {
     position: absolute;
-    height: 88.7vh;
-    width: 40%;
-    /* left: -40%; */
-    /* top: 80px; */
-    top: -78%;
+    /* height: 88.7vh; */
+    height: 90vh;
+    width: 30%;
+    /* top: -100%; */
+    top: -80vh; /* -1 * (サブコンテンツ高さ　-　ヘッダーの高さ) */
     right: 0;
-    background: #ceadad;
+    /* background: #ceadad; */
+    background-color: rgba(0, 0, 0, 0.3);
     transition: .7s;
 }
 .in {
     transform: translateY(100%);
 }
 /* ホームコンテンツ　レスポンシブ */
-/* @media ( max-width: 800px ) {
-    .mainContent {
-        height: 83.2vh;
-    }
+/* @media ( max-height: 500px){
     .subContent {
-        height: 83.2vh;
+        top: -70%
     }
 } */
+@media ( max-width: 800px ) {
+    .mainContent {
+        top: 14vh;
+        height: 85vh; /* (100vh - ヘッダーの高さ) - 1vh */
+    }
+    .subContent {
+        top: -72vh; /* -1 * (サブコンテンツ高さ　-　ヘッダーの高さ) */
+        width: 100%;
+        height: 86vh;
+    }
+}
+@media ( max-height: 660px ){
+    .mainContent {
+        top: 18vh;/* -1 * (サブコンテンツ高さ　-　ヘッダーの高さ) */
+        height: 81vh; /* (100vh - ヘッダーの高さ) - 1vh */
+    }
+    .subContent {
+        top: -64vh;/* -1 * (サブコンテンツ高さ　-　ヘッダーの高さ) */
+        height: 82vh;
+    }
+}
+/* @media ( max-height: 360px){
+    .subContent {
+        top: -142%;
+    }
+    .in {
+        transform: translateY(160%);
+    }
+} */
+
+/* アコーディオンメニュー */
+/* * {
+    margin: 0;
+    padding: 0;
+  } */
+.accordion  p {
+    margin: 1%;
+}
+.accordion {
+    /* width: 200px; */
+    margin: 0 auto;
+  }
+  .menu {
+    /* background-color: purple; */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 120%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  .aicon1::after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f0d9';
+    font-weight: 900;
+    margin-left: 15%;
+  }
+  .aicon2::after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f0d7';
+    font-weight: 900;
+    margin-left: 15%;
+  }
+  .menu:hover{
+  /* .menu:active,
+  .menu.is-active { */
+    /* background-color: black; */
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .contents {
+    text-align: center;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition-duration: 0.5s;
+    margin: 0;
+  }
+   
+  .contents.is-open {
+    /* border: 1px solid black; */
+    padding: 10px;
+    line-height: normal;
+    height: auto;
+    opacity: 1;
+  }
+  
+  .contents > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    margin-bottom: 0.5em;
+    color:rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  .contents > li:hover {
+      opacity: 0.6;
+      color:rgba(255, 255, 255, 1);
+  }
+  /* iframe要素 */
+  .iframeTitle {
+      text-align: center;
+  }
+  /* フォーム */
+  .contents p {
+      text-align: center;
+  }
+  label.error {
+	display:block;
+	background-color:rgb(73, 163, 81);
+	color:#ffffff;
+	margin:5px 0 0;
+	padding:5px;
+    max-width: 30%;
+}
+@media ( max-width: 500px ) {
+ label.error {
+    max-width: 100%;
+    }
+}
+/* スライドショー */
+
+ .slideshow{
+    margin: 2em auto;
+    width: 80%;
+}
+.slideshow img{
+    height: 50%;
+    width: 100%;
+}
+/*slick setting*/
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+}
