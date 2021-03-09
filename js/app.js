@@ -10,6 +10,7 @@ const hamburger = () => {
   } );
 
   const menu = document.querySelectorAll(".js-menu");
+  
 
   function toggle() {
     const content = this.nextElementSibling;
@@ -28,6 +29,7 @@ const hamburger = () => {
     let iframe = document.getElementById('iframe');
     let getId = event.target.id;
     iframe.innerHTML = '<iframe src="' + getId + '.html" width="100%" height="99%" id="' + getId + '" frameborder="0" ></iframe>';
+
   }
   
   for (let i = 0; i < link.length; i++) {

@@ -6,7 +6,7 @@ url += '&part=snippet';
 url += '&q=Science & Technology';
 url += '&videoEmbeddable=true';
 url += '&videoSyndicated=true';
-url += '&maxResults=1';
+url += '&maxResults=4';
 url += '&key=' + KEY;
 
 //  ajax
